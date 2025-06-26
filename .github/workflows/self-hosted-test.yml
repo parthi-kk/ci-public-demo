@@ -1,0 +1,25 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Print Hello from Self-Hosted Runner
+        run: echo "✅ Hello from your self-hosted runner!"
+
+      # Optional: Uncomment if you want to test Terraform
+      # - name: Terraform Version
+      #   run: terraform version
+
+      # Optional: Uncomment if you want to test Argo CD CLI
+      # - name: ArgoCD Version
+      #   run: argocd version
