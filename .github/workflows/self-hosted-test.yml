@@ -1,4 +1,4 @@
-name: Test Self-Hosted Runner
+name: Test Self-Hosted Runner (Windows)
 
 on:
   push:
@@ -10,16 +10,10 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print Hello from Self-Hosted Runner
-        run: echo "✅ Hello from your self-hosted runner! and success"
-
-      # Optional: Uncomment if you want to test Terraform
-      # - name: Terraform Version
-      #   run: terraform version
-
-      # Optional: Uncomment if you want to test Argo CD CLI
-      # - name: ArgoCD Version
-      #   run: argocd version
+      - name: Say Hello from Windows runner
+        shell: powershell
+        run: |
+          Write-Host "✅ Hello from your Windows self-hosted runner! Success!"
