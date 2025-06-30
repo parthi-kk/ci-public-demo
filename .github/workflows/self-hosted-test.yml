@@ -8,12 +8,19 @@ on:
 jobs:
   test:
     runs-on: [self-hosted, Windows, X64]
+    defaults:
+      run:
+        shell: powershell
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Print Shell
+        run: |
+          Write-Host "🔍 Shell check:"
+          Write-Host $SHELL
+
       - name: Say Hello from Windows runner
-        shell: powershell
         run: |
           Write-Host "✅ Hello from your Windows self-hosted runner! Success!"
