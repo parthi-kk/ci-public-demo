@@ -13,13 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print Shell
-        shell: pwsh
+      - name: Say Hello using Windows PowerShell 5.1
+        shell: powershell
         run: |
-          Write-Host "🔍 Shell check:"
-          $PSVersionTable
-
-      - name: Say Hello from Windows runner
-        shell: pwsh
-        run: |
-          Write-Host "✅ Hello from your Windows self-hosted runner! Success!"
+          Write-Host "✅ Running with Windows PowerShell 5.1!"
+          Write-Host "PSVersion: $($PSVersionTable.PSVersion)"
